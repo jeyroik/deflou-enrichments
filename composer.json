@@ -1,0 +1,14 @@
+{
+  "name": "jeyroik/deflou-enrichments",
+  "description": "Enrichments package for DeFlou",
+  "require": {
+    "jeyroik/extas-base": "*",
+    "jeyroik/extas-installer": "*",
+    "jeyroik/deflou-core": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "deflou\\": "src/"
+    }
+  }
+}
