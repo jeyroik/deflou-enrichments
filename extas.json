@@ -1,0 +1,55 @@
+{
+  "name": "deflou/enrichments",
+  "package_classes": [
+    {
+      "interface": "deflou\\interfaces\\enrichments\\IEnrichmentRepository",
+      "class": "deflou\\components\\enrichments\\EnrichmentRepository"
+    }
+  ],
+  "plugins": [
+    {
+      "class": "deflou\\components\\plugins\\PluginInstallEnrichments",
+      "stage": "extas.install"
+    }
+  ],
+  "enrichments": [
+    {
+      "name": "datetime",
+      "title": "DateTime",
+      "description": "Allow to use date-format for getting current datetime. Usage: @date({date-format}) Example: @date(Y-m-d H:i:s)",
+      "class": "deflou\\components\\enrichments\\EnrichmentDateTime",
+      "aliases": ["date"],
+      "parameters": {
+        "pattern": {
+          "name": "pattern",
+          "title": "Pattern",
+          "description": "Regular expression pattern for date searching",
+          "value": "/\\@date\\((.*?)\\)/m"
+        }
+      }
+    },
+    {
+      "name": "null",
+      "title": "Null",
+      "description": "Allow to send null-value. Usage: @null",
+      "class": "deflou\\components\\enrichments\\EnrichmentNull",
+      "aliases": ["null"],
+      "parameters": {}
+    },
+    {
+      "name": "regular",
+      "title": "Regular expression",
+      "description": "Allow to extract data by regular expression from the event parameters values. Usage: @{event-param-name}.{marker}({expression}) Example: @message.match(/my(.*)/)",
+      "class": "deflou\\components\\enrichments\\EnrichmentRegularExpression",
+      "aliases": [],
+      "parameters": {
+        "marker": {
+          "name": "marker",
+          "title": "Marker",
+          "description": "To use in the expression: /\\@(.*?)\\.{marker}\\((.*)\\)$/m",
+          "value": "match"
+        }
+      }
+    }
+  ]
+}
