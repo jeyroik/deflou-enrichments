@@ -13,9 +13,9 @@ use extas\components\plugins\PluginInstallDefault;
  */
 class PluginInstallEnrichments extends PluginInstallDefault
 {
-    protected $selfName = 'enrichment';
-    protected $selfSection = 'enrichments';
-    protected $selfRepositoryClass = IEnrichmentRepository::class;
-    protected $selfItemClass = Enrichment::class;
-    protected $selfUID = Enrichment::FIELD__NAME;
+    protected string $selfName = 'enrichment';
+    protected string $selfSection = 'enrichments';
+    protected string $selfRepositoryClass = IEnrichmentRepository::class;
+    protected string $selfItemClass = Enrichment::class;
+    protected string $selfUID = Enrichment::FIELD__NAME;
 }
